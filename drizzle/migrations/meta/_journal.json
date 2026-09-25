@@ -78,6 +78,13 @@
       "when": 1790324283987,
       "tag": "0010_create_game_tables",
       "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1790329345946,
+      "tag": "0011_import_quiz_schema_retry",
+      "breakpoints": true
     }
   ]
 }
