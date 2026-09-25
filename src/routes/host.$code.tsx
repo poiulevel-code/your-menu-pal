@@ -148,14 +148,14 @@ function HostScreen() {
               <div className="flex w-full flex-col items-center">
               <Button
                 onClick={() => setLobbyOpen(true)}
-                className="min-h-14 w-full max-w-sm bg-foreground px-6 text-base font-bold text-background hover:bg-foreground/90 sm:min-h-16 sm:text-lg"
+                className="min-h-14 w-full max-w-sm rounded-full bg-foreground px-6 text-base font-bold text-background hover:bg-foreground/90 sm:min-h-16 sm:text-lg"
               >
                 YARIŞMAYI BAŞLAT
               </Button>
               <Button
                 variant="outline"
                 onClick={() => void navigate({ to: "/sorular" })}
-                className="mt-3 min-h-11 w-full max-w-sm border-2 border-border bg-panel text-sm font-bold text-foreground hover:bg-muted"
+                className="mt-3 min-h-11 w-full max-w-sm rounded-full border-2 border-border bg-panel text-sm font-bold text-foreground hover:bg-muted"
               >
                 SORULARA DÖN
               </Button>
@@ -170,7 +170,7 @@ function HostScreen() {
               <h1 className="mt-1 text-5xl font-extrabold tracking-widest text-foreground sm:text-7xl lg:text-8xl">
                 {code}
               </h1>
-              <div className="mt-4 w-[clamp(112px,22vh,240px)] border-4 border-foreground p-2 text-foreground sm:mt-6">
+              <div className="mt-4 w-[clamp(112px,22vh,240px)] rounded-3xl border-4 border-foreground p-3 text-foreground sm:mt-6">
                 <QRCode value={joinUrl} size={240} bgColor="transparent" fgColor="currentColor" className="h-auto w-full" />
               </div>
               <p className="mt-3 text-xs font-bold tracking-wider text-foreground sm:text-base">
@@ -187,7 +187,7 @@ function HostScreen() {
               )}
               <Button
                 onClick={() => startWithFullscreen("start")}
-                className="mt-5 min-h-12 w-full max-w-md bg-foreground px-3 text-sm font-bold text-background hover:bg-foreground/90 sm:mt-8 sm:min-h-16 sm:text-lg"
+                className="mt-5 min-h-12 w-full max-w-md rounded-full bg-foreground px-3 text-sm font-bold text-background hover:bg-foreground/90 sm:mt-8 sm:min-h-16 sm:text-lg"
               >
                 {data.players.length === 2 ? "OYUNU BAŞLAT" : "OYUNCU BEKLEMEDEN BAŞLAT"}
               </Button>
@@ -280,7 +280,7 @@ function TeamSlot({
   connected?: boolean | undefined;
 }) {
   return (
-    <div className="min-w-0 border-2 border-border px-3 py-3 text-left sm:px-6 sm:py-6">
+    <div className="min-w-0 rounded-2xl border-2 border-border px-3 py-3 text-left sm:px-6 sm:py-6">
       <p
         className={`text-xs font-bold tracking-wider ${team === 1 ? "text-team1" : "text-team2"}`}
       >
