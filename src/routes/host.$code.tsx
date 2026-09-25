@@ -170,7 +170,7 @@ function HostScreen() {
               <h1 className="mt-1 text-5xl font-extrabold tracking-widest text-foreground sm:text-7xl lg:text-8xl">
                 {code}
               </h1>
-              <div className="mt-4 w-[clamp(128px,27vh,280px)] rounded-3xl border-4 border-foreground p-3 text-foreground sm:mt-6">
+              <div className="mt-4 w-[clamp(170px,36vh,380px)] rounded-3xl border-4 border-foreground p-3 text-foreground sm:mt-6">
                 <QRCode value={joinUrl} size={240} bgColor="transparent" fgColor="currentColor" className="h-auto w-full" />
               </div>
               <p className="mt-3 text-xs font-bold tracking-wider text-foreground sm:text-base">
@@ -289,7 +289,7 @@ function TeamSlot({
       <p className="mt-1 truncate text-xs font-bold text-foreground sm:text-xl">
         {name ? (
           <>
-            <span className="inline-block text-[0.8em] leading-none">{connected ? "🟢" : "🔴"}</span>{" "}
+            <span className="inline-block text-[0.6em] leading-none">{connected ? "🟢" : "🔴"}</span>{" "}
             {name}
           </>
         ) : (
