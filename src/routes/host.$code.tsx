@@ -169,18 +169,19 @@ function HostScreen() {
             </section>
           ) : waiting ? (
             <section className="flex h-full w-full flex-col items-center gap-1 px-4 pt-4 pb-3 text-center sm:px-10 sm:pt-6 sm:pb-5">
-              <div className="flex w-full min-h-0 flex-col items-center">
+              <div className="flex w-full shrink-0 flex-col items-center">
               <p className="text-xs font-semibold tracking-widest text-muted-foreground">
                 ODA KODU
               </p>
               <h1 className="mt-1 text-4xl font-extrabold tracking-widest text-foreground sm:text-6xl lg:text-7xl">
                 {code}
               </h1>
-              <div className="mt-3 w-[clamp(130px,28vh,290px)] rounded-[2rem] border-2 border-border bg-background p-3 text-foreground shadow-[var(--shadow-panel)] sm:mt-4 sm:p-4">
+              </div>
+              <div className="flex min-h-0 w-full flex-1 items-center justify-center">
+              <div className="w-[clamp(130px,26vh,270px)] rounded-[2rem] border-2 border-border bg-background p-3 text-foreground shadow-[var(--shadow-panel)] sm:p-4">
                 <QRCode value={joinUrl} size={240} bgColor="transparent" fgColor="currentColor" className="h-auto w-full" />
               </div>
               </div>
-              <div className="mt-auto flex w-full shrink-0 flex-col items-center">
               <div className="grid w-full max-w-5xl grid-cols-2 gap-2 sm:gap-4">
                 <TeamSlot team={1} name={team1?.name} connected={team1?.connected} />
                 <TeamSlot team={2} name={team2?.name} connected={team2?.connected} />
