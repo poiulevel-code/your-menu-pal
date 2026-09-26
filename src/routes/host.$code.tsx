@@ -123,9 +123,9 @@ function HostScreen() {
   const waiting = data.status === "WAITING" || data.status === "READY";
 
   return (
-    <main className={waiting ? "min-h-dvh bg-background" : "min-h-screen bg-background px-4 py-3 sm:px-8"}>
+    <main className={waiting ? "h-dvh overflow-hidden bg-background" : "min-h-screen bg-background px-4 py-3 sm:px-8"}>
       <div className={waiting ? "w-full" : "mx-auto w-full max-w-[1400px]"}>
-        <div className={waiting ? "min-h-dvh bg-panel" : "rounded-[var(--radius)] bg-panel p-4 shadow-[var(--shadow-panel)] sm:p-6"}>
+        <div className={waiting ? "h-dvh bg-panel" : "rounded-[var(--radius)] bg-panel p-4 shadow-[var(--shadow-panel)] sm:p-6"}>
           <div
             ref={arenaRef}
             className={isFullscreen ? "relative flex min-h-dvh flex-col justify-center bg-panel" : ""}
@@ -162,32 +162,29 @@ function HostScreen() {
               </div>
             </section>
           ) : waiting ? (
-            <section className="flex min-h-dvh w-full flex-col items-center justify-between gap-4 px-4 py-6 text-center sm:px-10 sm:py-10">
-              <div className="flex w-full flex-col items-center">
+            <section className="flex h-full w-full flex-col items-center justify-between gap-1 px-4 py-4 text-center sm:px-10 sm:py-6">
+              <div className="flex w-full min-h-0 flex-col items-center">
               <p className="text-xs font-semibold tracking-widest text-muted-foreground">
                 ODA KODU
               </p>
-              <h1 className="mt-1 text-5xl font-extrabold tracking-widest text-foreground sm:text-7xl lg:text-8xl">
+              <h1 className="mt-1 text-4xl font-extrabold tracking-widest text-foreground sm:text-6xl lg:text-7xl">
                 {code}
               </h1>
-              <div className="mt-5 w-[clamp(210px,44vh,430px)] rounded-[2rem] border-2 border-border bg-background p-4 text-foreground shadow-[var(--shadow-panel)] sm:mt-6 sm:p-5">
+              <div className="mt-3 w-[clamp(130px,28vh,290px)] rounded-[2rem] border-2 border-border bg-background p-3 text-foreground shadow-[var(--shadow-panel)] sm:mt-4 sm:p-4">
                 <QRCode value={joinUrl} size={240} bgColor="transparent" fgColor="currentColor" className="h-auto w-full" />
-                <p className="mt-3 flex items-center justify-center gap-2 text-[0.65rem] font-bold tracking-widest text-muted-foreground sm:text-xs">
-                  <span aria-hidden>📱</span> TELEFONUNUZLA OKUTUN
-                </p>
               </div>
               </div>
-              <div className="flex w-full flex-col items-center">
-              <div className="grid w-full max-w-5xl grid-cols-2 gap-2 sm:gap-5">
+              <div className="flex w-full min-h-0 flex-col items-center">
+              <div className="grid w-full max-w-5xl grid-cols-2 gap-2 sm:gap-4">
                 <TeamSlot team={1} name={team1?.name} connected={team1?.connected} />
                 <TeamSlot team={2} name={team2?.name} connected={team2?.connected} />
               </div>
               {data.players.length === 2 && (
-                <p className="mt-3 text-xl font-extrabold text-foreground">İKİ OYUNCU HAZIR!</p>
+                <p className="mt-2 text-lg font-extrabold text-foreground">İKİ OYUNCU HAZIR!</p>
               )}
               <Button
                 onClick={() => startWithFullscreen("start")}
-                className="mt-5 min-h-12 w-full max-w-md rounded-full bg-foreground px-3 text-sm font-bold text-background hover:bg-foreground/90 sm:mt-8 sm:min-h-16 sm:text-lg"
+                className="mt-2 min-h-11 w-full max-w-md rounded-full bg-foreground px-3 text-sm font-bold text-background hover:bg-foreground/90 sm:mt-3 sm:min-h-14 sm:text-lg"
               >
                 {data.players.length === 2 ? "OYUNU BAŞLAT" : "OYUNCU BEKLEMEDEN BAŞLAT"}
               </Button>
@@ -280,13 +277,13 @@ function TeamSlot({
   connected?: boolean | undefined;
 }) {
   return (
-    <div className="min-w-0 rounded-2xl border-2 border-border px-3 py-3 text-left sm:px-6 sm:py-6">
+    <div className="min-w-0 rounded-2xl border-2 border-border px-3 py-2 text-left sm:px-5 sm:py-3">
       <p
         className={`text-xs font-bold tracking-wider ${team === 1 ? "text-team1" : "text-team2"}`}
       >
         TAKIM {team}
       </p>
-      <p className="mt-1 truncate text-xs font-bold text-foreground sm:text-xl">
+      <p className="mt-0.5 truncate text-xs font-bold text-foreground sm:text-lg">
         {name ? (
           <>
             <span className="inline-block text-[0.6em] leading-none">{connected ? "🟢" : "🔴"}</span>{" "}
