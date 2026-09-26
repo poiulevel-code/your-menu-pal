@@ -128,7 +128,13 @@ function HostScreen() {
         <div className={waiting ? "h-dvh bg-panel" : "rounded-[var(--radius)] bg-panel p-4 shadow-[var(--shadow-panel)] sm:p-6"}>
           <div
             ref={arenaRef}
-            className={isFullscreen ? "relative flex min-h-dvh flex-col justify-center bg-panel" : ""}
+            className={
+              isFullscreen
+                ? "relative flex min-h-dvh flex-col justify-center bg-panel"
+                : waiting
+                  ? "flex h-full min-h-0 flex-col"
+                  : ""
+            }
           >
             {countdown}
             {waiting && !lobbyOpen ? (
