@@ -162,7 +162,7 @@ function HostScreen() {
               </div>
             </section>
           ) : waiting ? (
-            <section className="flex h-full w-full flex-col items-center justify-between gap-1 px-4 py-4 text-center sm:px-10 sm:py-6">
+            <section className="flex h-full w-full flex-col items-center gap-1 px-4 pt-4 pb-3 text-center sm:px-10 sm:pt-6 sm:pb-5">
               <div className="flex w-full min-h-0 flex-col items-center">
               <p className="text-xs font-semibold tracking-widest text-muted-foreground">
                 ODA KODU
@@ -174,7 +174,7 @@ function HostScreen() {
                 <QRCode value={joinUrl} size={240} bgColor="transparent" fgColor="currentColor" className="h-auto w-full" />
               </div>
               </div>
-              <div className="flex w-full min-h-0 flex-col items-center">
+              <div className="mt-auto flex w-full shrink-0 flex-col items-center">
               <div className="grid w-full max-w-5xl grid-cols-2 gap-2 sm:gap-4">
                 <TeamSlot team={1} name={team1?.name} connected={team1?.connected} />
                 <TeamSlot team={2} name={team2?.name} connected={team2?.connected} />
