@@ -170,10 +170,8 @@ function HostScreen() {
               <h1 className="mt-1 text-5xl font-extrabold tracking-widest text-foreground sm:text-7xl lg:text-8xl">
                 {code}
               </h1>
-              <div className="mt-5 w-[clamp(210px,44vh,430px)] rounded-[2rem] border-2 border-border bg-panel p-4 shadow-[var(--shadow-panel)] sm:mt-6 sm:p-5">
-                <div className="rounded-[1.4rem] border-2 border-border/50 bg-background p-4 text-foreground sm:p-5">
-                  <QRCode value={joinUrl} size={240} bgColor="transparent" fgColor="currentColor" className="h-auto w-full" />
-                </div>
+              <div className="mt-5 w-[clamp(210px,44vh,430px)] rounded-[2rem] border-2 border-border bg-background p-4 text-foreground shadow-[var(--shadow-panel)] sm:mt-6 sm:p-5">
+                <QRCode value={joinUrl} size={240} bgColor="transparent" fgColor="currentColor" className="h-auto w-full" />
                 <p className="mt-3 flex items-center justify-center gap-2 text-[0.65rem] font-bold tracking-widest text-muted-foreground sm:text-xs">
                   <span aria-hidden>📱</span> TELEFONUNUZLA OKUTUN
                 </p>
