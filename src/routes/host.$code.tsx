@@ -182,6 +182,7 @@ function HostScreen() {
                 <QRCode value={joinUrl} size={240} bgColor="transparent" fgColor="currentColor" className="h-auto w-full" />
               </div>
               </div>
+              <div className="mt-auto flex w-full shrink-0 flex-col items-center">
               <div className="grid w-full max-w-5xl grid-cols-2 gap-2 sm:gap-4">
                 <TeamSlot team={1} name={team1?.name} connected={team1?.connected} />
                 <TeamSlot team={2} name={team2?.name} connected={team2?.connected} />
