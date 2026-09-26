@@ -277,13 +277,13 @@ function TeamSlot({
   connected?: boolean | undefined;
 }) {
   return (
-    <div className="min-w-0 rounded-2xl border-2 border-border px-3 py-3 text-left sm:px-6 sm:py-6">
+    <div className="min-w-0 rounded-2xl border-2 border-border px-3 py-2 text-left sm:px-5 sm:py-3">
       <p
         className={`text-xs font-bold tracking-wider ${team === 1 ? "text-team1" : "text-team2"}`}
       >
         TAKIM {team}
       </p>
-      <p className="mt-1 truncate text-xs font-bold text-foreground sm:text-xl">
+      <p className="mt-0.5 truncate text-xs font-bold text-foreground sm:text-lg">
         {name ? (
           <>
             <span className="inline-block text-[0.6em] leading-none">{connected ? "🟢" : "🔴"}</span>{" "}
